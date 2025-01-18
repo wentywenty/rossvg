@@ -1,0 +1,5 @@
+
+sudo apt-get install ros-noetic-tf-conversions
+
+sudo apt-get install ros-noetic-urdf-tutorial
+sudo apt  install evince

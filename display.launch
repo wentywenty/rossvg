@@ -1,0 +1,16 @@
+<launch>
+    <!-- 加载URDF模型 -->
+    <param name="robot_description" command="$(find xacro)/xacro '/home/flora/github/zuoye/robot.urdf'" />
+    
+    <!-- 启动robot_state_publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0"/>
+        <param name="tf_prefix" type="string" value=""/>
+    </node>
+    
+    <!-- 启动joint_state_publisher -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    
+    <!-- 启动RViz -->
+    <node name="rviz" pkg="rviz" type="rviz"  args="-d /home/flora/github/zuoye/111.rviz" />
+</launch>

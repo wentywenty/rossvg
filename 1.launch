@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen">
+        <!-- <param name="background_r" value="255"/>
+        <param name="background_g" value="255"/>
+        <param name="background_b" value="255"/> -->
+        <param name="width" value="1800"/>
+        <param name="height" value="1800"/>
+    </node>
+    <!-- 启动静态变换广播器 -->
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_broadcaster" args="0 0 0 0 0 0 map odom" /> -->
+</launch>

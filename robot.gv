@@ -1,0 +1,26 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"wheel_back_axle" [label="wheel_back_axle"];
+"wheel3_link" [label="wheel3_link"];
+"wheel4_link" [label="wheel4_link"];
+"wheel_front_axle" [label="wheel_front_axle"];
+"wheel1_link" [label="wheel1_link"];
+"wheel2_link" [label="wheel2_link"];
+"lidar_link" [label="lidar_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_to_wheel_back_axle" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_to_wheel_back_axle" -> "wheel_back_axle"
+"wheel_back_axle" -> "wheel3_joint" [label="xyz: 0.07 -0.07 0 \nrpy: -1.54159 1.54159 -3.14159"]
+"wheel3_joint" -> "wheel3_link"
+"wheel_back_axle" -> "wheel4_joint" [label="xyz: -0.07 -0.07 0 \nrpy: -1.54159 1.54159 -3.14159"]
+"wheel4_joint" -> "wheel4_link"
+"base_link" -> "base_to_wheel_front_axle" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_to_wheel_front_axle" -> "wheel_front_axle"
+"wheel_front_axle" -> "wheel1_joint" [label="xyz: 0.07 0.07 0 \nrpy: -1.54159 1.54159 -3.14159"]
+"wheel1_joint" -> "wheel1_link"
+"wheel_front_axle" -> "wheel2_joint" [label="xyz: -0.07 0.07 0 \nrpy: -1.54159 1.54159 -3.14159"]
+"wheel2_joint" -> "wheel2_link"
+"base_link" -> "lidar_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"lidar_joint" -> "lidar_link"
+}
